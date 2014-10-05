@@ -1,0 +1,14 @@
+{
+    "name": "helmich/scalar-classes",
+    "description": "Wrap primitive data types with an object-oriented interface",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Martin Helmich",
+            "email": "m.helmich@mittwald.de"
+        }
+    ],
+    "require": {
+
+    }
+}
