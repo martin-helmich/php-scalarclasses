@@ -107,4 +107,25 @@ class String extends AbstractScalar
 
 
 
+    public function subString($start, $length = NULL)
+    {
+        return new String(substr($this->str, $start, $length));
+    }
+
+
+
+    public function equals($compare)
+    {
+        return $this->str == "$compare";
+    }
+
+
+
+    public function startWith($start)
+    {
+        return $this->subString(0, strlen($start))->equals($start);
+    }
+
+
+
 }
