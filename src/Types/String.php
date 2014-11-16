@@ -128,4 +128,11 @@ class String extends AbstractScalar
 
 
 
+    public function length()
+    {
+        return strlen($this->str);
+    }
+
+
+
 }
