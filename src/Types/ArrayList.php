@@ -2,7 +2,7 @@
 namespace Helmich\Scalars\Types;
 
 
-class ArrayList
+class ArrayList implements \Iterator, \ArrayAccess
 {
 
 
@@ -90,6 +90,76 @@ class ArrayList
     public function length()
     {
         return count($this->arr);
+    }
+
+
+
+    public function contains($element)
+    {
+        return in_array($element, $this->arr);
+    }
+
+
+
+    public function current()
+    {
+        return current($this->arr);
+    }
+
+
+
+    public function next()
+    {
+        next($this->arr);
+    }
+
+
+
+    public function key()
+    {
+        return key($this->arr);
+    }
+
+
+
+    public function valid()
+    {
+        return $this->current() !== FALSE;
+    }
+
+
+
+    public function rewind()
+    {
+        reset($this->arr);
+    }
+
+
+
+    public function offsetExists($offset)
+    {
+        return isset($this->arr[$offset]);
+    }
+
+
+
+    public function offsetGet($offset)
+    {
+        return $this->arr[$offset];
+    }
+
+
+
+    public function offsetSet($offset, $value)
+    {
+        $this->set($offset, $value);
+    }
+
+
+
+    public function offsetUnset($offset)
+    {
+        unset($this->arr[$offset]);
     }
 
 }
