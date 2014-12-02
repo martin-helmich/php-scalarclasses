@@ -128,9 +128,30 @@ class String extends AbstractScalar
 
 
 
+    public function endsWidth($end)
+    {
+        return $this->subString(-strlen($end))->equals($end);
+    }
+
+
+
+    public function contains($substring)
+    {
+        return strpos($this->str, $substring) !== FALSE;
+    }
+
+
+
     public function length()
     {
         return strlen($this->str);
+    }
+
+
+
+    public function append($string)
+    {
+        return new String($this->str . $string);
     }
 
 
