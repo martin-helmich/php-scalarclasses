@@ -14,7 +14,7 @@ class String extends AbstractScalar
 
 
 
-    public function __construct($str)
+    public function __construct($str = '')
     {
         if ($str instanceof String)
         {
@@ -35,6 +35,13 @@ class String extends AbstractScalar
     public function toUpper()
     {
         return new String(strtoupper($this->str));
+    }
+
+
+
+    public function toUpperFirst()
+    {
+        return new String(ucfirst($this->str));
     }
 
 
