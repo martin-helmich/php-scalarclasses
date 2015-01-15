@@ -162,4 +162,11 @@ class ArrayList implements \Iterator, \ArrayAccess
         unset($this->arr[$offset]);
     }
 
+
+
+    public function slice($offset, $length = NULL)
+    {
+        return new ArrayList(array_slice($this->arr, $offset, $length));
+    }
+
 }
